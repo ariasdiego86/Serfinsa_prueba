@@ -1,0 +1,140 @@
+# =============================================================
+# .gitignore — Serfinsa Full Stack (ASP.NET Core + React/Vite)
+# =============================================================
+
+# =============================================================
+# BACKEND — .NET / ASP.NET Core
+# =============================================================
+
+# Carpetas de compilación y publicación
+bin/
+obj/
+out/
+publish/
+
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Rider (JetBrains)
+.idea/
+*.DotSettings.user
+
+# Configuración local con secretos (nunca subir al repo)
+appsettings.Development.json
+appsettings.Local.json
+**/appsettings.*.json
+!**/appsettings.json
+
+# Secretos de usuario de .NET
+**/secrets.json
+
+# Archivos de caché de NuGet y paquetes locales
+*.nupkg
+.nuget/
+packages/
+
+# Archivos de cobertura de pruebas
+*.coverage
+*.coveragexml
+coverage/
+TestResults/
+
+# Archivos de Entity Framework Core (migraciones auto-generadas opcionales)
+# Descomenta si no quieres versionar las migraciones:
+# **/Migrations/
+
+# Archivos temporales de MSBuild
+*.tmp
+*.cache
+
+# Perfiles de publicación
+**/Properties/PublishProfiles/
+
+# Archivos de diagnóstico
+*.diagsession
+*.dvr
+
+
+# =============================================================
+# FRONTEND — Node.js / Vite / React
+# =============================================================
+
+# Dependencias instaladas por pnpm/npm
+node_modules/
+.pnp
+.pnp.js
+
+# Build de producción generado por Vite
+frontend/dist/
+frontend/.vite/
+
+# Variables de entorno locales del frontend
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs de npm/pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Caché de herramientas de frontend
+.eslintcache
+.stylelintcache
+
+
+# =============================================================
+# SISTEMA OPERATIVO
+# =============================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+
+# =============================================================
+# EDITORES / IDEs
+# =============================================================
+
+# VS Code (mantener solo la configuración del equipo si se desea compartir)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Vim / Neovim
+*.swp
+*.swo
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc

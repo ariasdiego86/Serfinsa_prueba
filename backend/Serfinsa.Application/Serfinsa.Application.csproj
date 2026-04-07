@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Capa de Aplicación: casos de uso, DTOs, validaciones y mapeos -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- AutoMapper: mapeo entre entidades de dominio y DTOs -->
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <!-- FluentValidation: validaciones declarativas de los DTOs de entrada -->
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <!-- Abstracciones de DI para registrar servicios sin depender del framework web -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Referencia al dominio para acceder a entidades e interfaces -->
+    <ProjectReference Include="..\Serfinsa.Domain\Serfinsa.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

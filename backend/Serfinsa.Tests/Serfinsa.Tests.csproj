@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Proyecto de pruebas unitarias con xUnit y Moq -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- xUnit: framework de pruebas unitarias -->
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <!-- Moq: librería de mocking para aislar dependencias en pruebas unitarias -->
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <!-- AutoMapper para instanciar el mapper en los tests de servicios -->
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <!-- FluentAssertions: aserciones más legibles (opcional) -->
+    <PackageReference Include="FluentAssertions" Version="6.12.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Serfinsa.Application\Serfinsa.Application.csproj" />
+    <ProjectReference Include="..\Serfinsa.Domain\Serfinsa.Domain.csproj" />
+    <ProjectReference Include="..\Serfinsa.Infrastructure\Serfinsa.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

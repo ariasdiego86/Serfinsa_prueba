@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Serfinsa.Api\Serfinsa.Api.csproj" />
+  <Project Path="Serfinsa.Application\Serfinsa.Application.csproj" />
+  <Project Path="Serfinsa.Domain\Serfinsa.Domain.csproj" />
+  <Project Path="Serfinsa.Infrastructure\Serfinsa.Infrastructure.csproj" />
+  <Project Path="Serfinsa.Tests\Serfinsa.Tests.csproj" />
+</Solution>

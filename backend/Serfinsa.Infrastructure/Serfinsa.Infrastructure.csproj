@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Capa de Infraestructura: acceso a datos, JWT, hashing de contraseñas -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- EF Core con SQL Server para la persistencia de datos -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <!-- BCrypt para hash seguro de contraseñas (salted + adaptive hashing) -->
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <!-- JWT Bearer para validar tokens en el middleware de ASP.NET Core -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
+    <!-- Librería estándar para crear y firmar tokens JWT -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Serfinsa.Domain\Serfinsa.Domain.csproj" />
+    <ProjectReference Include="..\Serfinsa.Application\Serfinsa.Application.csproj" />
+  </ItemGroup>
+
+</Project>
