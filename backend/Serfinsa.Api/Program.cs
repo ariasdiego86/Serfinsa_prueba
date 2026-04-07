@@ -2,6 +2,7 @@ using Microsoft.OpenApi.Models;
 using Serfinsa.Api.Middleware;
 using Serfinsa.Application;
 using Serfinsa.Infrastructure;
+using Serfinsa.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -119,6 +120,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Ejecutar el seeder al arrancar: crea el admin y productos de ejemplo si no existen.
+// El hash de la contraseña se genera aquí con BCrypt.Net (evita hashes inválidos en SQL).
+await DataSeeder.SeedAsync(app.Services);
 
 app.Run();
 

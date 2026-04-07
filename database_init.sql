@@ -68,40 +68,13 @@ END
 GO
 
 -- =============================================================
--- Seed: Usuario Administrador por defecto
--- Contraseña: Admin123!
--- Hash generado con BCrypt (work factor 12).
--- IMPORTANTE: Cambia la contraseña después del primer login.
+-- Seed: Datos iniciales
+-- NOTA: El usuario administrador y los productos de ejemplo
+-- son creados automáticamente por DataSeeder.cs al arrancar la API.
+-- El hash de contraseña se genera en tiempo de ejecución con BCrypt.Net
+-- para garantizar que sea válido.
+-- Credenciales: admin@serfinsa.com / Admin123!
 -- =============================================================
-IF NOT EXISTS (SELECT 1 FROM [dbo].[Users] WHERE [Email] = 'admin@serfinsa.com')
-BEGIN
-    INSERT INTO [dbo].[Users] ([Email], [PasswordHash], [Role])
-    VALUES (
-        'admin@serfinsa.com',
-        -- Hash BCrypt de 'Admin123!' con work factor 12
-        '$2a$12$LQv3c1yqBwEHxv8R1GlP8OCnORGp47iAkWUOegY.N7YYfEQwHEqGW',
-        'Admin'
-    );
-    PRINT 'Usuario administrador creado: admin@serfinsa.com / Admin123!';
-END
-GO
-
--- =============================================================
--- Seed: Productos de ejemplo
--- =============================================================
-IF NOT EXISTS (SELECT 1 FROM [dbo].[Products])
-BEGIN
-    INSERT INTO [dbo].[Products] ([Nombre], [Descripcion], [Precio], [Stock], [TipoProducto])
-    VALUES
-        ('Laptop HP 15', 'Laptop HP 15 pulgadas, Intel Core i5, 8GB RAM, 256GB SSD', 799.99, 15, 'Electrónico'),
-        ('Mouse Inalámbrico Logitech', 'Mouse ergonómico inalámbrico con batería recargable', 35.50, 50, 'Electrónico'),
-        ('Teclado Mecánico Redragon', 'Teclado mecánico RGB con switches Blue', 65.00, 30, 'Electrónico'),
-        ('Monitor Samsung 24"', 'Monitor Full HD 24 pulgadas, 75Hz, panel IPS', 220.00, 10, 'Electrónico'),
-        ('Silla Gamer DXRacer', 'Silla ergonómica para gaming con soporte lumbar', 350.00, 5, 'Mobiliario');
-
-    PRINT '5 productos de ejemplo insertados.';
-END
-GO
 
 PRINT '=== Inicialización de SerfinsaDb completada exitosamente. ===';
 GO
