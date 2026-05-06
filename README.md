@@ -140,19 +140,19 @@ Las pruebas cubren:
 ---
 
 ## 5. Probar la API con Swagger
-
-1. Abre `http://localhost:5000/swagger`
-2. Usa el endpoint `POST /api/auth/login` con:
+1. Ejecutar dotnet run --launch-profile dev para iniciar la API en modo desarrollo y poder visualizar Swagger.
+2. Abre `http://localhost:5000/swagger`
+3. Usa el endpoint `POST /api/auth/login` con:
    ```json
    {
      "email": "admin@serfinsa.com",
      "password": "Admin123!"
    }
    ```
-3. Copia el `token` de la respuesta.
-4. Haz clic en **Authorize** (botón en la esquina superior derecha de Swagger).
-5. Ingresa: `Bearer TU_TOKEN_AQUI`
-6. Ahora puedes probar todos los endpoints de `/api/products`.
+4. Copia el `token` de la respuesta.
+5. Haz clic en **Authorize** (botón en la esquina superior derecha de Swagger).
+6. Ingresa: `Bearer TU_TOKEN_AQUI`
+7. Ahora puedes probar todos los endpoints de `/api/products`.
 
 ---
 
